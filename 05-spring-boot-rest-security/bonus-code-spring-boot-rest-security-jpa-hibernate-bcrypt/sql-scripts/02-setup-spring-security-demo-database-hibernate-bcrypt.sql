@@ -24,7 +24,7 @@ CREATE TABLE `user` (
 --
 -- NOTE: The passwords are encrypted using BCrypt
 --
--- A generation tool is avail at: http://www.luv2code.com/generate-bcrypt-password
+-- A generation tool is avail at: http://www.jihan.com/generate-bcrypt-password
 --
 -- Default passwords here are: fun123
 --
