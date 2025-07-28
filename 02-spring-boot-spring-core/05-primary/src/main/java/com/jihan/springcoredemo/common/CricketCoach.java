@@ -4,10 +4,9 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
-@Primary
 public class CricketCoach implements Coach {
     @Override
     public String getDailyWorkout() {
-        return "cricket return 15 min bowling";
+        return "Practice fast bowling for 15 minutes";
     }
 }

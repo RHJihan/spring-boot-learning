@@ -8,13 +8,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class DemoController {
+
+    // define a private field for the dependency
     private Coach myCoach;
     private Coach anotherCoach;
 
     @Autowired
-    public DemoController(@Qualifier ("baseballCoach") Coach theCoach,
-                          @Qualifier ("baseballCoach") Coach theAnotherCoach) {
-        System.out.println("DemoController constructor");
+    public DemoController(
+                @Qualifier("cricketCoach") Coach theCoach,
+                @Qualifier("cricketCoach") Coach theAnotherCoach) {
+        System.out.println("In constructor: " + getClass().getSimpleName());
         myCoach = theCoach;
         anotherCoach = theAnotherCoach;
     }
@@ -25,7 +28,13 @@ public class DemoController {
     }
 
     @GetMapping("/check")
-    public String checkDailyWorkout() {
-        return "Comparing Beans: myCoach == anotherCoach, " + (myCoach == anotherCoach);
+    public String check() {
+        return "Comparing beans: myCoach == anotherCoach, " + (myCoach == anotherCoach);
     }
 }
+
+
+
+
+
+
